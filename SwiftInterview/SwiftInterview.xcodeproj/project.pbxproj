@@ -13,6 +13,7 @@
 		6514012C1DB9870300A2D2A3 /* SwiftInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514012B1DB9870300A2D2A3 /* SwiftInterviewTests.swift */; };
 		6514013B1DB987A500A2D2A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651401381DB987A500A2D2A3 /* AppDelegate.swift */; };
 		6514013C1DB987A500A2D2A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514013A1DB987A500A2D2A3 /* ViewController.swift */; };
+		6514013F1DB98C7500A2D2A3 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 6514013E1DB98C7500A2D2A3 /* people.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6514012D1DB9870300A2D2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651401381DB987A500A2D2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6514013A1DB987A500A2D2A3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6514013E1DB98C7500A2D2A3 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				651401361DB987A500A2D2A3 /* Source */,
+				6514013D1DB98C6000A2D2A3 /* json */,
 				6514011A1DB9870200A2D2A3 /* Main.storyboard */,
 				6514011D1DB9870200A2D2A3 /* Assets.xcassets */,
 				6514011F1DB9870200A2D2A3 /* LaunchScreen.storyboard */,
@@ -118,6 +121,14 @@
 				6514013A1DB987A500A2D2A3 /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6514013D1DB98C6000A2D2A3 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				6514013E1DB98C7500A2D2A3 /* people.json */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6514013F1DB98C7500A2D2A3 /* people.json in Resources */,
 				651401211DB9870200A2D2A3 /* LaunchScreen.storyboard in Resources */,
 				6514011E1DB9870200A2D2A3 /* Assets.xcassets in Resources */,
 				6514011C1DB9870200A2D2A3 /* Main.storyboard in Resources */,
