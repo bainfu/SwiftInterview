@@ -38,7 +38,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9uC-Mf-kmj">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="psx-hd-jdD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="psx-hd-jdD" customClass="PersonTableViewCell" customModule="SwiftInterview" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psx-hd-jdD" id="r22-I5-EtS">
@@ -74,6 +74,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="bmo-Uk-MDa" secondAttribute="trailing" constant="10" id="rBs-82-pOi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="bmo-Uk-MDa" id="sIa-R6-9W2"/>
+                                            <outlet property="nameLabel" destination="qub-Yc-wrs" id="vhf-KD-Uh8"/>
+                                            <outlet property="profileImageView" destination="OIY-u9-N5Q" id="Tv9-mx-945"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
