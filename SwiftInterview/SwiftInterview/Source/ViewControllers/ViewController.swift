@@ -10,15 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // TODO: move this somewhere else
+    @IBOutlet var tableView: UITableView!
+    
+    // TODO: move this somewhere else?
     var people: [Person]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let people = getAllPeople()
         
+        title = "People"
+
+        people = getAllPeople()
         print(people)
+        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,3 +36,27 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: DataProvider {}
+
+extension ViewController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (people?.count)!
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        
+        if indexPath.row < (people?.count)! {
+            if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell") as? PersonTableViewCell {
+                personCell.person = people?[indexPath.row]
+                
+                cell = personCell
+            }
+        }
+        
+        
+        return cell
+    }
+    
+    
+}

@@ -10,6 +10,10 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
 
+    @IBOutlet var profileImageView: UIImageView?
+    @IBOutlet var nameLabel: UILabel?
+    @IBOutlet var descriptionLabel: UILabel?
+    
     var person: Person? {
         didSet {
             nameLabel?.text = person?.name
@@ -25,11 +29,6 @@ class PersonTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
-    @IBOutlet var profileImageView: UIImageView?
-    @IBOutlet var nameLabel: UILabel?
-    @IBOutlet var descriptionLabel: UILabel?
     
     
     override func awakeFromNib() {
