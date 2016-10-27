@@ -10,6 +10,9 @@ import UIKit
 
 class PeopleViewController: UIViewController {
 
+    // We are "logged in" as the Guest User
+    let currentUserId = "0"
+    
     @IBOutlet var tableView: UITableView!
     
     // TODO: move this somewhere else?
@@ -20,8 +23,9 @@ class PeopleViewController: UIViewController {
         
         title = "People"
 
-        people = allPeople()
-        print(people)
+        let allPersons = allPeople()
+        // show everyone except "Guest User"
+        people = allPersons.filter({$0.personId != currentUserId})
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
