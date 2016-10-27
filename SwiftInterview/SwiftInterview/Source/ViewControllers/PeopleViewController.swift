@@ -34,7 +34,7 @@ class PeopleViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowReviews" {
-            if let vc = segue.destination as? ReviewsViewController,
+            if let vc = segue.destination as? PersonDetailViewController,
                 let cell = sender as? PersonTableViewCell {
                 vc.person = cell.person
             }

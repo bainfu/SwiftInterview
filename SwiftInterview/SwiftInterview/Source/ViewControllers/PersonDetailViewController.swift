@@ -1,5 +1,5 @@
 //
-//  ReviewsViewController.swift
+//  PersonDetailViewController.swift
 //  SwiftInterview
 //
 //  Created by Wesley St. John on 10/26/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewsViewController: UIViewController {
+class PersonDetailViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
@@ -18,6 +18,7 @@ class ReviewsViewController: UIViewController {
     var person: Person? {
         didSet {
             nameLabel?.text = person?.name
+            title = person?.name
             
             if let urlString = person?.imageURL,
                 let url = URL(string: urlString),
@@ -44,9 +45,9 @@ class ReviewsViewController: UIViewController {
 
 }
 
-extension ReviewsViewController: DataProvider {}
+extension PersonDetailViewController: DataProvider {}
 
-extension ReviewsViewController: UITableViewDataSource {
+extension PersonDetailViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (person?.reviews!.count)!

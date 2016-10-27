@@ -12,6 +12,13 @@ class ReviewTableViewCell: UITableViewCell {
 
     @IBOutlet var profileImageView: UIImageView?
     @IBOutlet var reviewLabel: UILabel?
+    
+    // Improvement: a better way to do this
+    @IBOutlet var star1: UIImageView?
+    @IBOutlet var star2: UIImageView?
+    @IBOutlet var star3: UIImageView?
+    @IBOutlet var star4: UIImageView?
+    @IBOutlet var star5: UIImageView?
 
     var review: Review? {
         didSet {
@@ -26,6 +33,14 @@ class ReviewTableViewCell: UITableViewCell {
                 profileImageView?.image = UIImage(data: data)
             } else {
                 profileImageView?.image = nil
+            }
+            
+            if let numStars = review?.stars {
+                star1?.isHidden = numStars < 1
+                star2?.isHidden = numStars < 2
+                star3?.isHidden = numStars < 3
+                star4?.isHidden = numStars < 4
+                star5?.isHidden = numStars < 5
             }
         }
     }
