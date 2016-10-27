@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PeopleViewController.swift
 //  SwiftInterview
 //
 //  Created by Wesley St. John on 10/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PeopleViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         title = "People"
 
-        people = getAllPeople()
+        people = allPeople()
         print(people)
         
         tableView.estimatedRowHeight = 100
@@ -32,12 +32,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowReviews" {
+            if let vc = segue.destination as? ReviewsViewController,
+                let cell = sender as? PersonTableViewCell {
+                vc.person = cell.person
+            }
+        }
+    }
+    
 
 }
 
-extension ViewController: DataProvider {}
+extension PeopleViewController: DataProvider {}
 
-extension ViewController: UITableViewDataSource {
+extension PeopleViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (people?.count)!
@@ -57,6 +66,5 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-    
     
 }

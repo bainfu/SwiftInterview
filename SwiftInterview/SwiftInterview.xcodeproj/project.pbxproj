@@ -12,8 +12,10 @@
 		651401211DB9870200A2D2A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6514011F1DB9870200A2D2A3 /* LaunchScreen.storyboard */; };
 		6514012C1DB9870300A2D2A3 /* SwiftInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514012B1DB9870300A2D2A3 /* SwiftInterviewTests.swift */; };
 		6514013B1DB987A500A2D2A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651401381DB987A500A2D2A3 /* AppDelegate.swift */; };
-		6514013C1DB987A500A2D2A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514013A1DB987A500A2D2A3 /* ViewController.swift */; };
+		6514013C1DB987A500A2D2A3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514013A1DB987A500A2D2A3 /* PeopleViewController.swift */; };
 		6514013F1DB98C7500A2D2A3 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 6514013E1DB98C7500A2D2A3 /* people.json */; };
+		652E7AAC1DC18E4200920AB0 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7AAB1DC18E4200920AB0 /* ReviewsViewController.swift */; };
+		652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */; };
 		6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */; };
 		C254A4261DB9918A0029C550 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4251DB9918A0029C550 /* Person.swift */; };
 		C254A4291DB991C70029C550 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4281DB991C70029C550 /* Review.swift */; };
@@ -40,8 +42,10 @@
 		6514012B1DB9870300A2D2A3 /* SwiftInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftInterviewTests.swift; sourceTree = "<group>"; };
 		6514012D1DB9870300A2D2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651401381DB987A500A2D2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6514013A1DB987A500A2D2A3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6514013A1DB987A500A2D2A3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		6514013E1DB98C7500A2D2A3 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		652E7AAB1DC18E4200920AB0 /* ReviewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		C254A4251DB9918A0029C550 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C254A4281DB991C70029C550 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -129,7 +133,8 @@
 		651401391DB987A500A2D2A3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6514013A1DB987A500A2D2A3 /* ViewController.swift */,
+				6514013A1DB987A500A2D2A3 /* PeopleViewController.swift */,
+				652E7AAB1DC18E4200920AB0 /* ReviewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */,
+				652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,10 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */,
+				652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */,
 				C254A4261DB9918A0029C550 /* Person.swift in Sources */,
+				652E7AAC1DC18E4200920AB0 /* ReviewsViewController.swift in Sources */,
 				C254A4291DB991C70029C550 /* Review.swift in Sources */,
 				C254A42B1DB993C70029C550 /* DataProvider.swift in Sources */,
-				6514013C1DB987A500A2D2A3 /* ViewController.swift in Sources */,
+				6514013C1DB987A500A2D2A3 /* PeopleViewController.swift in Sources */,
 				6514013B1DB987A500A2D2A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
