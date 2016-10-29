@@ -8,6 +8,11 @@
 
 import UIKit
 
+// We are "logged in" as the Guest User
+// TODO: move somewhere else
+let currentUserId = "0"
+
+
 class PersonDetailViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
@@ -28,7 +33,17 @@ class PersonDetailViewController: UIViewController {
             } else {
                 profileImageView?.image = nil
             }
+            
+            let myReviews = person?.reviews?.filter({$0.reviewerId == currentUserId})
+            if myReviews?.count == 0 {
+                let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
+                navigationItem.rightBarButtonItem = button
+            }
         }
+    }
+    
+    func addReviewTapped() {
+        performSegue(withIdentifier: "AddReviewSegue", sender: nil)
     }
     
     override func viewDidLoad() {
@@ -41,6 +56,22 @@ class PersonDetailViewController: UIViewController {
         // value is set before view exists...
         let aPerson = person
         person = aPerson
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddReviewSegue" {
+            if let navVC = segue.destination as? UINavigationController,
+                let addReviewVC = navVC.topViewController as? AddReviewViewController {
+                addReviewVC.completion = { (newReview: Review?) in
+                    
+                    if let review = newReview {
+                        self.person?.reviews?.append(review)
+                        self.tableView.reloadData()
+                        self.navigationItem.rightBarButtonItem = nil
+                    }
+                }
+            }
+        }
     }
 
 }

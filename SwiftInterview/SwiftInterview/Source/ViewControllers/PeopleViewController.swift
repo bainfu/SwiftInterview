@@ -11,6 +11,7 @@ import UIKit
 class PeopleViewController: UIViewController {
 
     // We are "logged in" as the Guest User
+    // TODO: move somewhere else
     let currentUserId = "0"
     
     @IBOutlet var tableView: UITableView!

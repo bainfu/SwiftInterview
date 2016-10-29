@@ -16,6 +16,7 @@
 		6514013F1DB98C7500A2D2A3 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 6514013E1DB98C7500A2D2A3 /* people.json */; };
 		652E7AAC1DC18E4200920AB0 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7AAB1DC18E4200920AB0 /* PersonDetailViewController.swift */; };
 		652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */; };
+		655820C11DC40EE9002D5A4E /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */; };
 		6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */; };
 		C254A4261DB9918A0029C550 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4251DB9918A0029C550 /* Person.swift */; };
 		C254A4291DB991C70029C550 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4281DB991C70029C550 /* Review.swift */; };
@@ -46,6 +47,7 @@
 		6514013E1DB98C7500A2D2A3 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		652E7AAB1DC18E4200920AB0 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		C254A4251DB9918A0029C550 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C254A4281DB991C70029C550 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				6514013A1DB987A500A2D2A3 /* PeopleViewController.swift */,
 				652E7AAB1DC18E4200920AB0 /* PersonDetailViewController.swift */,
+				655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */,
 				652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */,
 				C254A4261DB9918A0029C550 /* Person.swift in Sources */,
+				655820C11DC40EE9002D5A4E /* AddReviewViewController.swift in Sources */,
 				652E7AAC1DC18E4200920AB0 /* PersonDetailViewController.swift in Sources */,
 				C254A4291DB991C70029C550 /* Review.swift in Sources */,
 				C254A42B1DB993C70029C550 /* DataProvider.swift in Sources */,
