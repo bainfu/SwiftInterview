@@ -9,14 +9,9 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
-
-    // We are "logged in" as the Guest User
-    // TODO: move somewhere else
-    let currentUserId = "0"
     
     @IBOutlet var tableView: UITableView!
     
-    // TODO: move this somewhere else?
     var people: [Person]?
     
     override func viewDidLoad() {
@@ -25,16 +20,11 @@ class PeopleViewController: UIViewController {
         title = "People"
 
         let allPersons = allPeople()
-        // show everyone except "Guest User"
-        people = allPersons.filter({$0.personId != currentUserId})
+        // show everyone except the current user
+        people = allPersons.filter({$0.personId != UIApplication.shared.delegate!.currentUserId()})
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,6 +39,7 @@ class PeopleViewController: UIViewController {
 
 }
 
+// POSSIBLE IMPROVEMENT: Don't make each VC a DataProvider, come up with a more elegant solution
 extension PeopleViewController: DataProvider {}
 
 extension PeopleViewController: UITableViewDataSource {
@@ -67,7 +58,6 @@ extension PeopleViewController: UITableViewDataSource {
                 cell = personCell
             }
         }
-        
         
         return cell
     }

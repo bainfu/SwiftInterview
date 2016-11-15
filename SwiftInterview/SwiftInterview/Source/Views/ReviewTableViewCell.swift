@@ -24,7 +24,8 @@ class ReviewTableViewCell: UITableViewCell {
         didSet {
             reviewLabel?.text = review?.comment
             
-            // Improvement: ? ! ? !
+            // POSSIBLE IMPROVEMENT: Instead of having a block like this in 4 different places, create a method that everyone calls
+            // POSSIBLE IMPROVEMENT: Async load of image?
             if let reviewer = person(personId:(review?.reviewerId)!),
                 let urlString = reviewer.imageURL,
                 let url = URL(string: urlString),
@@ -44,20 +45,8 @@ class ReviewTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
 
-
-// This is getting ridiculous
+// POSSIBLE IMPROVEMENT: Don't make everyone a DataProvider, come up with a more elegant solution
 extension ReviewTableViewCell: DataProvider {}

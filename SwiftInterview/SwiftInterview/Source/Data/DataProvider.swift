@@ -36,11 +36,10 @@ extension DataProvider {
     }
     
     func person(personId: String) -> Person? {
-        // Question: Why can't I call allPeople() here without self?
-        // "Variable used within its own initial value"
+        // POSSIBLE BUG TO INTRODUCE: remove "self." from the line below, which causes crash: "Variable used within its own initial value"
         let allPeople = self.allPeople()
         
-        // Improvement: use filter or predicate
+        // POSSIBLE IMPROVEMENT: use filter or predicate
         for person: Person in allPeople {
             if person.personId == personId {
                 return person

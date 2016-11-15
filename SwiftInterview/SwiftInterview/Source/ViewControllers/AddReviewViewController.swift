@@ -11,7 +11,8 @@ import UIKit
 class AddReviewViewController: UIViewController {
 
     @IBOutlet var textView: UITextView!
-    // Improvement: a better way to do this
+    
+    // POSSIBLE IMPROVEMENT: Instead of 5 IBOutlets, a better way???
     @IBOutlet var star1: UIButton!
     @IBOutlet var star2: UIButton!
     @IBOutlet var star3: UIButton!
@@ -20,10 +21,6 @@ class AddReviewViewController: UIViewController {
     
     var completion: ((_ newReview: Review?) -> (Void))?
     var numStars: Int = 0
-
-    // We are "logged in" as the Guest User
-    // TODO: move somewhere else
-    let currentUserId = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +42,7 @@ class AddReviewViewController: UIViewController {
             let star = UIImage(named: "star")
             let grayStar = UIImage(named: "grayStar")
             
+            // POSSIBLE IMPROVEMENT: Instead of 5 IBOutlets, a better way???
             star1.setImage(grayStar, for: .normal)
             star2.setImage(grayStar, for: .normal)
             star3.setImage(grayStar, for: .normal)
@@ -74,7 +72,7 @@ class AddReviewViewController: UIViewController {
     @IBAction func submitTapped(sender: AnyObject?) {
         var review: Review?
         if let text = textView.text {
-            review = Review(stars: numStars, comment: text, reviewerId: currentUserId)
+            review = Review(stars: numStars, comment: text, reviewerId: UIApplication.shared.delegate!.currentUserId())
         }
 
         close(newReview: review)

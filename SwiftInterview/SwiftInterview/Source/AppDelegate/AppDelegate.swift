@@ -41,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
 
+extension UIApplicationDelegate {
+    public func currentUserId() -> String {
+        // currently, anyone using the app is the Guest user (id = 0)
+        return "0"
+    }
 }
 

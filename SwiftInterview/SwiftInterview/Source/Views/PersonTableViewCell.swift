@@ -19,6 +19,8 @@ class PersonTableViewCell: UITableViewCell {
             nameLabel?.text = person?.name
             descriptionLabel?.text = person?.personDescription
             
+            // POSSIBLE IMPROVEMENT: Instead of having a block like this in 4 different places, create a method that everyone calls
+            // POSSIBLE IMPROVEMENT: Async load of image?
             if let urlString = person?.imageURL,
                 let url = URL(string: urlString),
                 let data = try? Data(contentsOf: url) {
@@ -28,18 +30,6 @@ class PersonTableViewCell: UITableViewCell {
                 profileImageView?.image = nil
             }
         }
-    }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

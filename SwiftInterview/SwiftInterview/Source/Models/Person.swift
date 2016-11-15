@@ -34,7 +34,7 @@ class Person: NSObject {
         super.init()
     }
     
-    // TODO: task for interviewer: make description optional from incoming json?
+    // TODO: TASK: make description optional from incoming json
     class func parse(dictionary: [String: Any]) -> Person {
         guard let personId = dictionary["personId"] as? String,
         let name = dictionary["name"] as? String,

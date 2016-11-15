@@ -8,15 +8,9 @@
 
 import UIKit
 
-// We are "logged in" as the Guest User
-// TODO: move somewhere else
-let currentUserId = "0"
-
-
 class PersonDetailViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
@@ -25,6 +19,8 @@ class PersonDetailViewController: UIViewController {
             nameLabel?.text = person?.name
             title = person?.name
             
+            // POSSIBLE IMPROVEMENT: Instead of having a block like this in 4 different places, create a method that everyone calls
+            // POSSIBLE IMPROVEMENT: Async load of image?
             if let urlString = person?.imageURL,
                 let url = URL(string: urlString),
                 let data = try? Data(contentsOf: url) {
@@ -34,11 +30,13 @@ class PersonDetailViewController: UIViewController {
                 profileImageView?.image = nil
             }
             
-            let myReviews = person?.reviews?.filter({$0.reviewerId == currentUserId})
-            if myReviews?.count == 0 {
+            
+            // POSSIBLE IMPROVEMENT: Don't let the user leave a review of a person if they have already left one
+            /*let myReviews = person?.reviews?.filter({$0.reviewerId == UIApplication.shared.delegate!.currentUserId()})
+            if myReviews?.count == 0 {*/
                 let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
                 navigationItem.rightBarButtonItem = button
-            }
+            /*}*/
         }
     }
     
@@ -52,10 +50,7 @@ class PersonDetailViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        // Totally stupid, but im lazy right now
-        // value is set before view exists...
-        let aPerson = person
-        person = aPerson
+        // EXISTING BUG: The var "person" gets set before viewDidLoad, so the UI doesn't exist yet, so you don't see the label/image view update
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,7 +62,6 @@ class PersonDetailViewController: UIViewController {
                     if let review = newReview {
                         self.person?.reviews?.append(review)
                         self.tableView.reloadData()
-                        self.navigationItem.rightBarButtonItem = nil
                     }
                 }
             }
@@ -75,8 +69,6 @@ class PersonDetailViewController: UIViewController {
     }
 
 }
-
-extension PersonDetailViewController: DataProvider {}
 
 extension PersonDetailViewController: UITableViewDataSource {
     
@@ -94,7 +86,6 @@ extension PersonDetailViewController: UITableViewDataSource {
                 cell = reviewCell
             }
         }
-        
         
         return cell
     }
