@@ -20,6 +20,12 @@ class ReviewTableViewCell: UITableViewCell {
     @IBOutlet var star4: UIImageView?
     @IBOutlet var star5: UIImageView?
 
+    @IBOutlet var likeButton: UIButton?
+    @IBOutlet var likesLabel: UILabel?
+    
+    var like: ((_ didLike: Bool) -> (Void))?
+    var didLike = false
+    
     var review: Review? {
         didSet {
             reviewLabel?.text = review?.comment
@@ -43,6 +49,36 @@ class ReviewTableViewCell: UITableViewCell {
                 star4?.isHidden = numStars < 4
                 star5?.isHidden = numStars < 5
             }
+            
+            didLike = false
+            if let likes = review?.likes {
+                let myLikes = likes.filter({$0 == UIApplication.shared.delegate!.currentUserId()})
+                if myLikes.count > 0 {
+                    didLike = true
+                }
+                
+            }
+            if didLike {
+                likeButton?.setImage(UIImage(named:"likeOn"), for: .normal)
+            } else {
+                likeButton?.setImage(UIImage(named:"likeOff"), for: .normal)
+            }
+            
+            // EXISTING BUG: since review?.likes is optional, the label says "Optional(0)"
+            likesLabel?.text = "\(review?.likes.count)"
+        }
+    }
+    
+    @IBAction func likeButtonTapped(sender: UIButton) {
+        didLike = !didLike
+        if didLike {
+            sender.setImage(UIImage(named:"likeOn"), for: .normal)
+        } else {
+            sender.setImage(UIImage(named:"likeOff"), for: .normal)
+        }
+        
+        if let likeClosure = like {
+            likeClosure(didLike)
         }
     }
 

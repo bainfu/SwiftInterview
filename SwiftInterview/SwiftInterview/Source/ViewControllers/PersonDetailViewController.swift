@@ -83,6 +83,22 @@ extension PersonDetailViewController: UITableViewDataSource {
             if let reviewCell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as? ReviewTableViewCell {
                 reviewCell.review = person?.reviews![indexPath.row]
                 
+                reviewCell.like = {(didLike: Bool) -> (Void) in
+
+                    // EXISTING BUG: Capturing self in closure causes a retain cycle!
+                    //self.person?.reviews![indexPath.row].likes = (self.person?.reviews![indexPath.row].likes)! + delta
+                    
+                    if didLike {
+                        self.person?.reviews![indexPath.row].likes.append("0")
+                    } else {
+                        self.person?.reviews![indexPath.row].likes = (self.person?.reviews![indexPath.row].likes.filter {
+                            $0 != UIApplication.shared.delegate!.currentUserId()
+                            })!
+                    }
+                    
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+                
                 cell = reviewCell
             }
         }

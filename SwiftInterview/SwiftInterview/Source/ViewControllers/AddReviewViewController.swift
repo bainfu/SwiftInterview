@@ -72,7 +72,7 @@ class AddReviewViewController: UIViewController {
     @IBAction func submitTapped(sender: AnyObject?) {
         var review: Review?
         if let text = textView.text {
-            review = Review(stars: numStars, comment: text, reviewerId: UIApplication.shared.delegate!.currentUserId())
+            review = Review(stars: numStars, comment: text, reviewerId: UIApplication.shared.delegate!.currentUserId(), likes: [])
         }
 
         close(newReview: review)

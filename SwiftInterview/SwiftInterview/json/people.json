@@ -14,7 +14,8 @@
   "reviews": [{
               "stars": 5,
               "comment": "She loves to eat and sleep.",
-              "reviewerId": "44444444"
+              "reviewerId": "44444444",
+              "likes": []
               }]
   },
   {
@@ -25,7 +26,10 @@
   "reviews": [{
               "stars": 1,
               "comment": "I hate him so... much that f... flames? Flames, on the side of my face...",
-              "reviewerId": "33333333"
+              "reviewerId": "33333333",
+              "likes": ["11111111",
+                        "55555555",
+                        "44444444"]
               }]
   },
   {
@@ -36,11 +40,14 @@
   "reviews": [{
               "stars": 4,
               "comment": "He is so cool <3",
-              "reviewerId": "44444444"
+              "reviewerId": "44444444",
+              "likes": []
               },{
               "stars": 3,
               "comment": "Paul is good at sliding.",
-              "reviewerId": "22222222"
+              "reviewerId": "22222222",
+              "likes": ["22222222"
+                        ]
               }]
   },
   {
@@ -51,7 +58,8 @@
   "reviews": [{
               "stars": 5,
               "comment": "Hanna can eat you under the table.",
-              "reviewerId": "22222222"
+              "reviewerId": "22222222",
+              "likes": []
               }]
   },
   {

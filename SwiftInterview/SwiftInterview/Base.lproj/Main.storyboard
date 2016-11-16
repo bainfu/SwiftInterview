@@ -216,20 +216,41 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUT-Z6-msi">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="gLz-06-1Pc"/>
+                                                        <constraint firstAttribute="height" constant="30" id="uuj-FI-iA0"/>
+                                                    </constraints>
+                                                    <state key="normal" image="likeOff"/>
+                                                    <connections>
+                                                        <action selector="likeButtonTappedWithSender:" destination="vgm-aA-a09" eventType="touchUpInside" id="Gf7-zu-JqS"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLL-mR-WX9">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Vi1-2q-s0n" firstAttribute="leading" secondItem="ZSW-Lv-KtU" secondAttribute="trailing" constant="5" id="19w-sC-wxd"/>
+                                                <constraint firstItem="FUT-Z6-msi" firstAttribute="top" secondItem="Qow-Aw-rQV" secondAttribute="top" constant="1" id="5kx-WN-neg"/>
                                                 <constraint firstAttribute="trailing" secondItem="sX7-We-pl6" secondAttribute="trailing" constant="10" id="Cjb-SU-lhi"/>
                                                 <constraint firstItem="ZSW-Lv-KtU" firstAttribute="top" secondItem="Qow-Aw-rQV" secondAttribute="top" constant="5" id="Clm-Pv-f5m"/>
+                                                <constraint firstItem="MLL-mR-WX9" firstAttribute="bottom" secondItem="FUT-Z6-msi" secondAttribute="bottom" id="GV5-f4-7X4"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sX7-We-pl6" secondAttribute="bottom" constant="5" id="MVS-8O-aLe"/>
                                                 <constraint firstItem="Vi1-2q-s0n" firstAttribute="top" secondItem="ZSW-Lv-KtU" secondAttribute="top" id="P7r-jD-GI8"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZSW-Lv-KtU" secondAttribute="bottom" constant="5" id="QI2-De-AF3"/>
                                                 <constraint firstItem="ZSW-Lv-KtU" firstAttribute="leading" secondItem="Qow-Aw-rQV" secondAttribute="leading" constant="5" id="Uj1-ei-uaC"/>
+                                                <constraint firstAttribute="trailing" secondItem="MLL-mR-WX9" secondAttribute="trailing" constant="10" id="inQ-ZG-F6d"/>
                                                 <constraint firstItem="sX7-We-pl6" firstAttribute="leading" secondItem="ZSW-Lv-KtU" secondAttribute="trailing" constant="5" id="rh3-IH-U4m"/>
+                                                <constraint firstItem="MLL-mR-WX9" firstAttribute="leading" secondItem="FUT-Z6-msi" secondAttribute="trailing" constant="2" id="rp3-CJ-SFv"/>
                                                 <constraint firstItem="sX7-We-pl6" firstAttribute="top" secondItem="Vi1-2q-s0n" secondAttribute="bottom" constant="5" id="u8b-2Z-h69"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="likeButton" destination="FUT-Z6-msi" id="57a-zT-oVJ"/>
+                                            <outlet property="likesLabel" destination="MLL-mR-WX9" id="28U-3c-K5L"/>
                                             <outlet property="profileImageView" destination="ZSW-Lv-KtU" id="rhC-Ba-2B7"/>
                                             <outlet property="reviewLabel" destination="sX7-We-pl6" id="IgQ-NI-P5B"/>
                                             <outlet property="star1" destination="BiR-yW-UrS" id="UGp-xN-o8C"/>
@@ -385,6 +406,7 @@
     </scenes>
     <resources>
         <image name="grayStar" width="85" height="85"/>
+        <image name="likeOff" width="41" height="45"/>
         <image name="star" width="85" height="85"/>
     </resources>
 </document>

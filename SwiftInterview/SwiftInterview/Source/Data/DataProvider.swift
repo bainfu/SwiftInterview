@@ -36,11 +36,10 @@ extension DataProvider {
     }
     
     func person(personId: String) -> Person? {
-        // POSSIBLE BUG TO INTRODUCE: remove "self." from the line below, which causes crash: "Variable used within its own initial value"
-        let allPeople = self.allPeople()
+        let peeps = allPeople()
         
         // POSSIBLE IMPROVEMENT: use filter or predicate
-        for person: Person in allPeople {
+        for person: Person in peeps {
             if person.personId == personId {
                 return person
             }
