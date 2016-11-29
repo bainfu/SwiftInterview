@@ -59,10 +59,12 @@ class PersonDetailViewController: UIViewController {
                 let addReviewVC = navVC.topViewController as? AddReviewViewController {
                 addReviewVC.completion = { (newReview: Review?) in
                     
+                    /* NEW FEATURE: ADD NEW REVIEW
                     if let review = newReview {
                         self.person?.reviews?.append(review)
                         self.tableView.reloadData()
                     }
+                    */
                 }
             }
         }

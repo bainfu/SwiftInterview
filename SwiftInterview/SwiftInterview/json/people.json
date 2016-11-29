@@ -2,7 +2,7 @@
   {
   "personId": "0",
   "name": "Guest User",
-  "description": "",
+  "description": "This is you :)",
   "imageUrl": "https://lh3.googleusercontent.com/m4qVAtydd-uQt_njgeKe0EMsM-Z4w9zOehOUQW9lsJMpHWzilHbpeVq1CLB67lOlfwoupSIOGkmCgw-hEJFAe9-PXF73R6HlyBKOUKcPSCXrLBdd9mnroGOpvs813KfQz-cv_m_GYryoW_qBTfueOgvsgoLZqLypbiB2DcuZnv2z4yGazdnBWuQc1OGKVqtJzqkZfCLsiKyFDM2zX_VzebKXg19qQy201P9v-RguO1vTylywVaJMT-9L1AVsIIIUovYXXOYAI9honVOkloZpiQh_Ci2937DES0hK4CApzotxGYamErJ25qNnq8CAxroRdrlTc3V222RUwynEaRAcF3tzSaKfqtyKck4ALSBq6o-HHE50Z6BRHa9-GitZbgmWrnr4811yF2dv1wgQP5ltJgpVjGGK_f4QJMzGwSMnFvUr-gU0KRPUq9L-4fzHj8XfbTJ_Pew79qx7y1Snpyxr1l5-ka0bXhkWB0kRHWnHZ695zxExCnqqGd9Nes5HYCcAc53fVOFY6NmQalaLe8t5h6r1cN7QVdXBtVvH9oEg1iYdZODRalIFFU_Jy4_38_Am_FrGp1M6P1Ctvq2HJ0X8jrZgxjQFyJQAOHdJW0H5cEriI9pY=s200-no",
   "reviews": []
   },
@@ -53,7 +53,7 @@
   {
   "personId": "44444444",
   "name": "Hanna",
-  "description": "HR Fantastic",
+  "description": null,
   "imageUrl": "https://assets-cf.themuse.com/uploaded/companies/832/people/2415-small.jpg?v=8360b7911a9b168db3c32633924892ac9c18be16aa6aea0c145662fb9fafc3c4",
   "reviews": [{
               "stars": 5,

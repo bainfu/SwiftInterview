@@ -70,12 +70,14 @@ class AddReviewViewController: UIViewController {
     }
     
     @IBAction func submitTapped(sender: AnyObject?) {
+        /* NEW FEATURE: ADD NEW REVIEW
         var review: Review?
         if let text = textView.text {
             review = Review(stars: numStars, comment: text, reviewerId: UIApplication.shared.delegate!.currentUserId(), likes: [])
         }
 
         close(newReview: review)
+        */
     }
     
     @IBAction func cancelTapped(sender: AnyObject?) {
@@ -83,11 +85,14 @@ class AddReviewViewController: UIViewController {
     }
     
     func close(newReview: Review?) {
+        /* NEW FEATURE: ADD NEW REVIEW
         dismiss(animated: true) {
             if let completion = self.completion {
                 completion(newReview)
             }
         }
+        */
+        dismiss(animated: true, completion: nil)
     }
 
 }
