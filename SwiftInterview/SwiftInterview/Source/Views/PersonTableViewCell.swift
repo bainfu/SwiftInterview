@@ -14,7 +14,7 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var descriptionLabel: UILabel?
     
-    var person: Person? {
+    var person: PersonStruct? {
         didSet {
             nameLabel?.text = person?.name
             descriptionLabel?.text = person?.personDescription

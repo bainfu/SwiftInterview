@@ -12,7 +12,7 @@ class PeopleViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var people: [Person]?
+    var people: [PersonStruct]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
