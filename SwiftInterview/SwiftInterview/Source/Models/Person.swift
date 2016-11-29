@@ -2,13 +2,13 @@
 //  Person.swift
 //  SwiftInterview
 //
-//  Created by Yuxi Lin on 10/20/16.
+//  Created by Yuxi Lin on 11/28/16.
 //  Copyright © 2016 mobileforming. All rights reserved.
 //
 
 import UIKit
 
-class Person: NSObject {
+struct Person {
     
     var personId: String
     var name: String
@@ -16,29 +16,19 @@ class Person: NSObject {
     var imageURL: String?
     var reviews: [Review]?
     
-    override init() {
-        personId = ""
-        name = ""
-        personDescription = ""
-        imageURL = ""
-        reviews = [Review]()
-    }
-    
-    init(personId: String, name: String, personDescription: String, imageURL: String? = nil, reviews: [Review]? = [Review]()) {
+    init(personId: String = "", name: String = "", personDescription: String = "", imageURL: String? = nil, reviews: [Review]? = [Review]()) {
         self.personId = personId
         self.name = name
         self.personDescription = personDescription
         self.imageURL = imageURL
         self.reviews = reviews
-        
-        super.init()
     }
     
     // TODO: TASK: make description optional from incoming json
-    class func parse(dictionary: [String: Any]) -> Person {
+    static func parse(dictionary: [String: Any]) -> Person {
         guard let personId = dictionary["personId"] as? String,
-        let name = dictionary["name"] as? String,
-        let desc = dictionary["description"] as? String
+            let name = dictionary["name"] as? String,
+            let desc = dictionary["description"] as? String
             else {
                 return Person()
         }

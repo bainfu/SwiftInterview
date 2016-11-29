@@ -14,7 +14,7 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
-    var person: PersonStruct? {
+    var person: Person? {
         didSet {
             nameLabel?.text = person?.name
             title = person?.name

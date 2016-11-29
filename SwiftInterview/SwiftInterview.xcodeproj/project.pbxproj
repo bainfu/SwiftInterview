@@ -18,11 +18,9 @@
 		652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */; };
 		655820C11DC40EE9002D5A4E /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */; };
 		6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */; };
-		C254A4261DB9918A0029C550 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4251DB9918A0029C550 /* Person.swift */; };
 		C254A4291DB991C70029C550 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4281DB991C70029C550 /* Review.swift */; };
 		C254A42B1DB993C70029C550 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A42A1DB993C70029C550 /* DataProvider.swift */; };
-		C2B3643E1DED4F9B004F2B38 /* DataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3643D1DED4F9B004F2B38 /* DataCoordinator.swift */; };
-		C2B364401DED540A004F2B38 /* PersonStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3643F1DED540A004F2B38 /* PersonStruct.swift */; };
+		C2B364401DED540A004F2B38 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3643F1DED540A004F2B38 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +49,9 @@
 		652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
-		C254A4251DB9918A0029C550 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C254A4281DB991C70029C550 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C254A42A1DB993C70029C550 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Data/DataProvider.swift; sourceTree = "<group>"; };
-		C2B3643D1DED4F9B004F2B38 /* DataCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCoordinator.swift; path = Data/DataCoordinator.swift; sourceTree = "<group>"; };
-		C2B3643F1DED540A004F2B38 /* PersonStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonStruct.swift; sourceTree = "<group>"; };
+		C2B3643F1DED540A004F2B38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +120,6 @@
 				6559C85D1DB9950500BCC35C /* Views */,
 				C254A4271DB9919D0029C550 /* Models */,
 				C254A42A1DB993C70029C550 /* DataProvider.swift */,
-				C2B3643D1DED4F9B004F2B38 /* DataCoordinator.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -167,8 +162,7 @@
 		C254A4271DB9919D0029C550 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C254A4251DB9918A0029C550 /* Person.swift */,
-				C2B3643F1DED540A004F2B38 /* PersonStruct.swift */,
+				C2B3643F1DED540A004F2B38 /* Person.swift */,
 				C254A4281DB991C70029C550 /* Review.swift */,
 			);
 			path = Models;
@@ -278,15 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2B3643E1DED4F9B004F2B38 /* DataCoordinator.swift in Sources */,
 				6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */,
 				652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */,
-				C254A4261DB9918A0029C550 /* Person.swift in Sources */,
 				655820C11DC40EE9002D5A4E /* AddReviewViewController.swift in Sources */,
 				652E7AAC1DC18E4200920AB0 /* PersonDetailViewController.swift in Sources */,
 				C254A4291DB991C70029C550 /* Review.swift in Sources */,
 				C254A42B1DB993C70029C550 /* DataProvider.swift in Sources */,
-				C2B364401DED540A004F2B38 /* PersonStruct.swift in Sources */,
+				C2B364401DED540A004F2B38 /* Person.swift in Sources */,
 				6514013C1DB987A500A2D2A3 /* PeopleViewController.swift in Sources */,
 				6514013B1DB987A500A2D2A3 /* AppDelegate.swift in Sources */,
 			);
