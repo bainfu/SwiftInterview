@@ -40,7 +40,7 @@ class Review: NSObject {
                       likes: dictionary["likes"] as! [String])
     }
     
-    // POSSIBLE IMPROVEMENT/FIX FOR BUG: Rewrite method to be more like this:
+    // FIX FOR BUG: Rewrite method to be more like this:
     /*class func parse(dictionary: [String: Any]) -> Review {
         guard let stars = dictionary["stars"] as? Int,
         let comment = dictionary["comment"] as? String,
