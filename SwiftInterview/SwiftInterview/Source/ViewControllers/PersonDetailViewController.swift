@@ -28,8 +28,6 @@ class PersonDetailViewController: UIViewController {
                 profileImageView?.image = nil
             }
             
-            let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
-            navigationItem.rightBarButtonItem = button
         }
     }
     
@@ -54,6 +52,11 @@ class PersonDetailViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func addReviewButton() {
+        let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
+        navigationItem.rightBarButtonItem = button
     }
 
 }
