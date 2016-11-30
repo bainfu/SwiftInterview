@@ -41,6 +41,7 @@ class PersonDetailViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        addReviewButtonToToolbar()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,7 +55,7 @@ class PersonDetailViewController: UIViewController {
         }
     }
     
-    private func addReviewButton() {
+    private func addReviewButtonToToolbar() {
         let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
         navigationItem.rightBarButtonItem = button
     }
