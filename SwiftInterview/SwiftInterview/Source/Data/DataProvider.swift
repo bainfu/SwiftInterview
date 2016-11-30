@@ -38,7 +38,6 @@ extension DataProvider {
     func person(personId: String) -> Person? {
         let peeps = allPeople()
         
-        // POSSIBLE IMPROVEMENT: use filter or predicate
         for person: Person in peeps {
             if person.personId == personId {
                 return person

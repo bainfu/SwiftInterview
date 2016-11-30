@@ -39,7 +39,6 @@ class PeopleViewController: UIViewController {
 
 }
 
-// POSSIBLE IMPROVEMENT: Don't make each VC a DataProvider, come up with a more elegant solution
 extension PeopleViewController: DataProvider {}
 
 extension PeopleViewController: UITableViewDataSource {

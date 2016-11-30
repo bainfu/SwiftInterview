@@ -1,14 +1,3 @@
-//
-//  CheatSheet.swift
-//  SwiftInterview
-//
-//  Created by Wesley St. John on 11/29/16.
-//  Copyright © 2016 mobileforming. All rights reserved.
-//
-
-import Foundation
-
-
 /********
  * BUGS *
  ********

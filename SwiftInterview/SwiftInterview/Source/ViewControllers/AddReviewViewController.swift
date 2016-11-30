@@ -10,9 +10,7 @@ import UIKit
 
 class AddReviewViewController: UIViewController {
 
-    @IBOutlet var textView: UITextView!
-    
-    // POSSIBLE IMPROVEMENT: Instead of 5 IBOutlets, a better way???
+    @IBOutlet var textView: UITextView!    
     @IBOutlet var star1: UIButton!
     @IBOutlet var star2: UIButton!
     @IBOutlet var star3: UIButton!
@@ -42,7 +40,6 @@ class AddReviewViewController: UIViewController {
             let star = UIImage(named: "star")
             let grayStar = UIImage(named: "grayStar")
             
-            // POSSIBLE IMPROVEMENT: Instead of 5 IBOutlets, a better way???
             star1.setImage(grayStar, for: .normal)
             star2.setImage(grayStar, for: .normal)
             star3.setImage(grayStar, for: .normal)
@@ -70,14 +67,7 @@ class AddReviewViewController: UIViewController {
     }
     
     @IBAction func submitTapped(sender: AnyObject?) {
-        /* NEW FEATURE: ADD NEW REVIEW
-        var review: Review?
-        if let text = textView.text {
-            review = Review(stars: numStars, comment: text, reviewerId: UIApplication.shared.delegate!.currentUserId(), likes: [])
-        }
-
-        close(newReview: review)
-        */
+        
     }
     
     @IBAction func cancelTapped(sender: AnyObject?) {
@@ -85,13 +75,6 @@ class AddReviewViewController: UIViewController {
     }
     
     func close(newReview: Review?) {
-        /* NEW FEATURE: ADD NEW REVIEW
-        dismiss(animated: true) {
-            if let completion = self.completion {
-                completion(newReview)
-            }
-        }
-        */
         dismiss(animated: true, completion: nil)
     }
 

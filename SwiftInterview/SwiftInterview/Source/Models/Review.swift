@@ -32,24 +32,11 @@ class Review: NSObject {
         super.init()
     }
     
-    // POSSIBLE BUG TO INTRODUCE: Make json that will cause a crash here
     class func parse(dictionary: [String: Any]) -> Review {
         return Review(stars: dictionary["stars"] as! Int,
                       comment: dictionary["comment"] as! String,
                       reviewerId: dictionary["reviewerId"] as! String,
                       likes: dictionary["likes"] as! [String])
     }
-    
-    // FIX FOR BUG: Rewrite method to be more like this:
-    /*class func parse(dictionary: [String: Any]) -> Review {
-        guard let stars = dictionary["stars"] as? Int,
-        let comment = dictionary["comment"] as? String,
-        let reviewerId = dictionary["reviewerId"] as? String,
-        let likes = dictionary["likes"] as? [String]
-            else {
-                return Review()
-        }
-        
-        return Review(stars: stars, comment: comment, reviewerId: reviewerId, likes: likes)
-    }*/
+
 }

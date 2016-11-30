@@ -24,7 +24,6 @@ struct Person {
         self.reviews = reviews
     }
     
-    // TODO: TASK: make description optional from incoming json
     static func parse(dictionary: [String: Any]) -> Person {
         guard let personId = dictionary["personId"] as? String,
             let name = dictionary["name"] as? String,
