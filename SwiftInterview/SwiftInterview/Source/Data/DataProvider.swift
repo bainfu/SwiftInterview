@@ -18,8 +18,14 @@ extension DataProvider {
     func allPeople() -> [Person] {
         let bundle = Bundle(for: PeopleViewController.self)
 
-        guard let path = bundle.path(forResource: "people", ofType: "json"), let data = NSData(contentsOfFile: path) as? Data else {
-            print("trouble converting json file to data")
+        guard let path = bundle.path(forResource: "people", ofType: "json") else {
+            print("trouble getting path of data file")
+            return [Person]()
+        }
+        let url = URL(fileURLWithPath: path)
+        
+        guard let data = try? Data(contentsOf: url) else {
+            print("trouble converting url to data")
             return [Person]()
         }
 
@@ -38,7 +44,6 @@ extension DataProvider {
     func person(personId: String) -> Person? {
         let peeps = allPeople()
         
-        // POSSIBLE IMPROVEMENT: use filter or predicate
         for person: Person in peeps {
             if person.personId == personId {
                 return person

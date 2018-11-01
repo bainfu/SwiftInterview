@@ -19,15 +19,17 @@ class PersonTableViewCell: UITableViewCell {
             nameLabel?.text = person?.name
             descriptionLabel?.text = person?.personDescription
             
-            // POSSIBLE IMPROVEMENT: Instead of having a block like this in 4 different places, create a method that everyone calls
-            // POSSIBLE IMPROVEMENT: Async load of image?
-            if let urlString = person?.imageURL,
-                let url = URL(string: urlString),
-                let data = try? Data(contentsOf: url) {
+            let queue = DispatchQueue(label: "com.mobileforming.swiftinterview")
+            queue.async {
                 
-                profileImageView?.image = UIImage(data: data)
-            } else {
-                profileImageView?.image = nil
+                if let urlString = self.person?.imageURL,
+                    let url = URL(string: urlString),
+                    let data = try? Data(contentsOf: url) {
+
+                    self.profileImageView?.image = UIImage(data: data)
+                } else {
+                    self.profileImageView?.image = nil
+                }
             }
         }
     }

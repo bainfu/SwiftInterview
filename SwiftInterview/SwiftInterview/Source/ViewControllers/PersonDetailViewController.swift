@@ -19,8 +19,6 @@ class PersonDetailViewController: UIViewController {
             nameLabel?.text = person?.name
             title = person?.name
             
-            // POSSIBLE IMPROVEMENT: Instead of having a block like this in 4 different places, create a method that everyone calls
-            // POSSIBLE IMPROVEMENT: Async load of image?
             if let urlString = person?.imageURL,
                 let url = URL(string: urlString),
                 let data = try? Data(contentsOf: url) {
@@ -30,17 +28,10 @@ class PersonDetailViewController: UIViewController {
                 profileImageView?.image = nil
             }
             
-            
-            // POSSIBLE IMPROVEMENT: Don't let the user leave a review of a person if they have already left one
-            /*let myReviews = person?.reviews?.filter({$0.reviewerId == UIApplication.shared.delegate!.currentUserId()})
-            if myReviews?.count == 0 {*/
-                let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
-                navigationItem.rightBarButtonItem = button
-            /*}*/
         }
     }
     
-    func addReviewTapped() {
+    @objc func addReviewTapped() {
         performSegue(withIdentifier: "AddReviewSegue", sender: nil)
     }
     
@@ -49,8 +40,6 @@ class PersonDetailViewController: UIViewController {
 
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        // EXISTING BUG: The var "person" gets set before viewDidLoad, so the UI doesn't exist yet, so you don't see the label/image view update
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,15 +48,14 @@ class PersonDetailViewController: UIViewController {
                 let addReviewVC = navVC.topViewController as? AddReviewViewController {
                 addReviewVC.completion = { (newReview: Review?) in
                     
-                    /* NEW FEATURE: ADD NEW REVIEW
-                    if let review = newReview {
-                        self.person?.reviews?.append(review)
-                        self.tableView.reloadData()
-                    }
-                    */
                 }
             }
         }
+    }
+    
+    private func addReviewButton() {
+        let button = UIBarButtonItem(title: "Add Review", style: .plain, target: self, action: #selector(PersonDetailViewController.addReviewTapped))
+        navigationItem.rightBarButtonItem = button
     }
 
 }
@@ -75,34 +63,33 @@ class PersonDetailViewController: UIViewController {
 extension PersonDetailViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (person?.reviews!.count)!
+        guard let person = person,
+            let reviews = person.reviews else {
+            return 0
+        }
+        return reviews.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
-        if indexPath.row < (person?.reviews!.count)! {
-            if let reviewCell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as? ReviewTableViewCell {
-                reviewCell.review = person?.reviews![indexPath.row]
+        if let reviewCell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as? ReviewTableViewCell {
+            reviewCell.review = person?.reviews?[indexPath.row]
+            
+            reviewCell.like = {(didLike: Bool) -> (Void) in
                 
-                reviewCell.like = {(didLike: Bool) -> (Void) in
-
-                    // EXISTING BUG: Capturing self in closure causes a retain cycle!
-                    //self.person?.reviews![indexPath.row].likes = (self.person?.reviews![indexPath.row].likes)! + delta
-                    
-                    if didLike {
-                        self.person?.reviews![indexPath.row].likes.append("0")
-                    } else {
-                        self.person?.reviews![indexPath.row].likes = (self.person?.reviews![indexPath.row].likes.filter {
-                            $0 != UIApplication.shared.delegate!.currentUserId()
-                            })!
-                    }
-                    
-                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                if didLike {
+                    self.person!.reviews![indexPath.row].likes.append("0")
+                } else {
+                    self.person!.reviews![indexPath.row].likes = (self.person!.reviews![indexPath.row].likes.filter {
+                        $0 != UIApplication.shared.delegate!.currentUserId()
+                        })
                 }
                 
-                cell = reviewCell
+                tableView.reloadRows(at: [indexPath], with: .automatic)
             }
+            
+            cell = reviewCell
         }
         
         return cell

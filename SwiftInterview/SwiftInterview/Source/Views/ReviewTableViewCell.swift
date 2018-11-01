@@ -12,8 +12,6 @@ class ReviewTableViewCell: UITableViewCell {
 
     @IBOutlet var profileImageView: UIImageView?
     @IBOutlet var reviewLabel: UILabel?
-    
-    // Improvement: a better way to do this
     @IBOutlet var star1: UIImageView?
     @IBOutlet var star2: UIImageView?
     @IBOutlet var star3: UIImageView?
@@ -30,8 +28,6 @@ class ReviewTableViewCell: UITableViewCell {
         didSet {
             reviewLabel?.text = review?.comment
             
-            // POSSIBLE IMPROVEMENT: Instead of having a block like this in 4 different places, create a method that everyone calls
-            // POSSIBLE IMPROVEMENT: Async load of image?
             if let reviewer = person(personId:(review?.reviewerId)!),
                 let urlString = reviewer.imageURL,
                 let url = URL(string: urlString),
@@ -64,8 +60,7 @@ class ReviewTableViewCell: UITableViewCell {
                 likeButton?.setImage(UIImage(named:"likeOff"), for: .normal)
             }
             
-            // EXISTING BUG: since review?.likes is optional, the label says "Optional(0)"
-            likesLabel?.text = "\(review?.likes.count)"
+            likesLabel?.text = "\(String(describing: review?.likes.count))"
         }
     }
     
@@ -84,5 +79,4 @@ class ReviewTableViewCell: UITableViewCell {
 
 }
 
-// POSSIBLE IMPROVEMENT: Don't make everyone a DataProvider, come up with a more elegant solution
 extension ReviewTableViewCell: DataProvider {}

@@ -18,9 +18,9 @@
 		652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */; };
 		655820C11DC40EE9002D5A4E /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */; };
 		6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */; };
-		C254A4261DB9918A0029C550 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4251DB9918A0029C550 /* Person.swift */; };
 		C254A4291DB991C70029C550 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A4281DB991C70029C550 /* Review.swift */; };
 		C254A42B1DB993C70029C550 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254A42A1DB993C70029C550 /* DataProvider.swift */; };
+		C2B364401DED540A004F2B38 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3643F1DED540A004F2B38 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +45,14 @@
 		651401381DB987A500A2D2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6514013A1DB987A500A2D2A3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		6514013E1DB98C7500A2D2A3 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		65162D771E30291200B0681B /* SwiftInterviewBugs.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = SwiftInterviewBugs.rtf; sourceTree = "<group>"; };
 		652E7AAB1DC18E4200920AB0 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		652E7AAD1DC18F7700920AB0 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		655820C01DC40EE9002D5A4E /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		6559C85E1DB9952500BCC35C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
-		C254A4251DB9918A0029C550 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C254A4281DB991C70029C550 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C254A42A1DB993C70029C550 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Data/DataProvider.swift; sourceTree = "<group>"; };
+		C2B3643F1DED540A004F2B38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 				6514011D1DB9870200A2D2A3 /* Assets.xcassets */,
 				6514011F1DB9870200A2D2A3 /* LaunchScreen.storyboard */,
 				651401221DB9870300A2D2A3 /* Info.plist */,
+				65DBABD51DEE60D300BF1A2C /* SupportingFiles */,
 			);
 			path = SwiftInterview;
 			sourceTree = "<group>";
@@ -159,10 +161,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		65DBABD51DEE60D300BF1A2C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				65162D771E30291200B0681B /* SwiftInterviewBugs.rtf */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		C254A4271DB9919D0029C550 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C254A4251DB9918A0029C550 /* Person.swift */,
+				C2B3643F1DED540A004F2B38 /* Person.swift */,
 				C254A4281DB991C70029C550 /* Review.swift */,
 			);
 			path = Models;
@@ -213,16 +223,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = mobileforming;
 				TargetAttributes = {
 					651401121DB9870200A2D2A3 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0930;
 					};
 					651401261DB9870300A2D2A3 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0930;
 						TestTargetID = 651401121DB9870200A2D2A3;
 					};
 				};
@@ -274,11 +284,11 @@
 			files = (
 				6559C85F1DB9952500BCC35C /* PersonTableViewCell.swift in Sources */,
 				652E7AAE1DC18F7700920AB0 /* ReviewTableViewCell.swift in Sources */,
-				C254A4261DB9918A0029C550 /* Person.swift in Sources */,
 				655820C11DC40EE9002D5A4E /* AddReviewViewController.swift in Sources */,
 				652E7AAC1DC18E4200920AB0 /* PersonDetailViewController.swift in Sources */,
 				C254A4291DB991C70029C550 /* Review.swift in Sources */,
 				C254A42B1DB993C70029C550 /* DataProvider.swift in Sources */,
+				C2B364401DED540A004F2B38 /* Person.swift in Sources */,
 				6514013C1DB987A500A2D2A3 /* PeopleViewController.swift in Sources */,
 				6514013B1DB987A500A2D2A3 /* AppDelegate.swift in Sources */,
 			);
@@ -331,14 +341,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -379,14 +397,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -406,6 +432,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -419,7 +446,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileforming.SwiftInterview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -431,7 +459,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileforming.SwiftInterview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -443,7 +472,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileforming.SwiftInterviewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftInterview.app/SwiftInterview";
 			};
 			name = Debug;
@@ -456,7 +486,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileforming.SwiftInterviewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftInterview.app/SwiftInterview";
 			};
 			name = Release;
